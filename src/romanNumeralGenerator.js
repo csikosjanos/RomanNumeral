@@ -10,7 +10,7 @@ if (typeof exports === 'undefined') {
 			throw new Error('Can be generated only for number between 1 and 3999');
 		}
 
-		return '';
+		return 'I';
 	};
 
 })(exports);
