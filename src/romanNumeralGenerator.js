@@ -1,21 +1,23 @@
 if (typeof exports === 'undefined') {
-	var exports = this['numeral'] = {};
+	this['numeral'] = {}; // namespace for browser
 }
 
 (function(exports){
 	'use strict';
 
+	//Roman numeral digits (covers upto 3999)
+	var digits = [
+		['','I','II','III','IV','V','VI','VII','VIII','IX'],
+		['','X','XX','XXX','XL','L','LX','LXX','LXXX','XC'],
+		['','C','CC','CCC','CD','D','DC','DCC','DCCC','CM'],
+		['','M','MM','MMM']
+	];
+
 	exports.romanNumeralGenerator = function(int){
+		//Caveat: Only support numbers between 1 and 3999
 		if (int<1 || int>3999) {
 			throw new Error('Can be generated only for number between 1 and 3999');
 		}
-
-		var digits = [
-			['','I','II','III','IV','V','VI','VII','VIII','IX'],
-			['','X','XX','XXX','XL','L','LX','LXX','LXXX','XC'],
-			['','C','CC','CCC','CD','D','DC','DCC','DCCC','CM'],
-			['','M','MM','MMM']
-		];
 
 		var ret = '';
 		var num = int.toString();
@@ -27,4 +29,4 @@ if (typeof exports === 'undefined') {
 		return ret;
 	};
 
-})(exports);
+})(exports || this['numeral']);
