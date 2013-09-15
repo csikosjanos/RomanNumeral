@@ -1,7 +1,3 @@
-if (typeof exports === 'undefined') {
-	this['numeral'] = {}; // namespace for browser
-}
-
 (function(exports){
 	'use strict';
 
@@ -29,4 +25,4 @@ if (typeof exports === 'undefined') {
 		return ret;
 	};
 
-})(exports || this['numeral']);
+})((typeof exports === 'undefined') ? this['numeral']={} : exports);
