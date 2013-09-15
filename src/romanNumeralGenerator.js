@@ -24,7 +24,7 @@ if (typeof exports === 'undefined') {
 			ret = digits[i][parseInt(num[num.length-(i+1)],10)] + ret;
 		}
 
-		return 'I';
+		return ret;
 	};
 
 })(exports);
